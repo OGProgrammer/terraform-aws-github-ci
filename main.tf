@@ -115,7 +115,7 @@ resource "aws_s3_bucket_object" "_" {
 resource "aws_codebuild_project" "_" {
   count = "${length(var.codebuild_project) == 0 ? 1 : 0}"
 
-  name = "${var.namespace}-${var.github_repository}"
+  name = "${var.github_repository}"
 
   build_timeout = "5"
   service_role  = "${aws_iam_role.codebuild.arn}"
