@@ -136,6 +136,11 @@ resource "aws_codebuild_project" "_" {
     type            = "LINUX_CONTAINER"
     image           = "${var.codebuild_image}"
     privileged_mode = "${var.codebuild_privileged_mode}"
+
+    environment_variable {
+      "name"  = "APP_NAMESPACE"
+      "value" = "${var.namespace}"
+    }
   }
 
   artifacts {

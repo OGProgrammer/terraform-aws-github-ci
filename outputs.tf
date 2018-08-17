@@ -32,6 +32,11 @@ output "codebuild_service_role_arn" {
   value = "${aws_iam_role.codebuild.arn}"
 }
 
+# output.codebuild_service_role_id
+output "codebuild_service_role_id" {
+  value = "${aws_iam_role.codebuild.id}"
+}
+
 # output.codebuild_bucket
 output "codebuild_bucket" {
   value = "${aws_s3_bucket._.bucket}"
